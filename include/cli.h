@@ -15,8 +15,6 @@ struct task{
     string updatedAt;
 };
 
-const char* fileName = "tasks.json";
-
 class cli{
 private:
     vector<task> tasks;
@@ -24,7 +22,7 @@ public:
     void addTask(string desc);
     void updateTask(int id, string desc);
     void deleteTask(int id);
-    void markInProgess(int id);
+    void markInProgress(int id);
     void markDone(int id);
     void listTasks(string type); 
 };

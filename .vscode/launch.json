@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/c++/taskTracker/task-tracker-CLI/src",
-      "program": "d:/c++/taskTracker/task-tracker-CLI/src/build/Debug/outDebug",
+      "cwd": "d:/cpp/task-tracker-CLI/src",
+      "program": "d:/cpp/task-tracker-CLI/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

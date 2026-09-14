@@ -2,21 +2,21 @@
 
 void cli::addTask(string desc){
     task temp;
-    temp.id = getLastId(fileName) + 1;
+    temp.id = getLastId("tasks.json") + 1;
     temp.description = desc;
     temp.status = "todo";
     temp.createdAt = getCurrentTime();
     temp.updatedAt = getCurrentTime();
-    writeTaskToJson(temp, fileName);
+    writeTaskToJson(temp, "tasks.json");
 }
 
 void cli::deleteTask(int id){
     try{
         vector<task> newTasks;
-        tasks = parseJsonFile(fileName);
+        tasks = parseJsonFile("tasks.json");
         bool check = 0;
-        for(int i = 0; i < tasks.size(); i++){
-            if(tasks[i].id != id) newTasks.push_back(tasks[i]);
+        for(auto tasks : tasks){
+            if(tasks.id != id) newTasks.push_back(tasks);
             else check = 1;
         }
         if(check == 0) throw IdNotFound();
@@ -29,9 +29,9 @@ void cli::deleteTask(int id){
 
 void cli::updateTask(int id, string desc){
     try{
-        tasks = parseJsonFile(fileName);
+        tasks = parseJsonFile("tasks.json");
         bool check = 0;
-        for(auto task : tasks){
+        for(auto& task : tasks){
             if(task.id == id){
                 task.description = desc;
                 check = 1;
@@ -47,16 +47,16 @@ void cli::updateTask(int id, string desc){
     
 }
 
-void cli::markInProgess(int id){
+void cli::markInProgress(int id){
     try{
-        tasks = parseJsonFile(fileName);
+        tasks = parseJsonFile("tasks.json");
         bool check = 0;
-        for(auto task : tasks){
+        for(auto& task : tasks){
             if(task.id == id){
                 task.status = "in-progress";
                 check = 1;
+                break;
             }
-            break;
         }
         if(check == 0) throw IdNotFound();
         writeTasksToJson(tasks);
@@ -68,14 +68,14 @@ void cli::markInProgess(int id){
 
 void cli::markDone(int id){
     try{
-        tasks = parseJsonFile(fileName);
+        tasks = parseJsonFile("tasks.json");
         bool check = 0;
-        for(auto task : tasks){
+        for(auto& task : tasks){
             if(task.id == id){
                 task.status = "done";
                 check = 1;
+                break;
             }
-            break;
         }
         if(check == 0) throw IdNotFound();
         writeTasksToJson(tasks);
@@ -88,7 +88,7 @@ void cli::markDone(int id){
 void cli::listTasks(string type){
     
     try{
-        tasks = parseJsonFile(fileName);
+        tasks = parseJsonFile("tasks.json");
         if(tasks.size() == 0) throw NoTaskFound();
         if(type == ""){
             for(auto task : tasks){

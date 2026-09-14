@@ -9,5 +9,5 @@ const char* NoTaskFound::what() const noexcept{
 }
 
 const char* CommandNotFound::what() const noexcept{
-    return "COMMAND NOT FOUND\nList of commands:\nadd\nupdate [id]\ndelete [id]\nmark-in-progress\nmark-done\nlist [done/todo/in-progress]";
+    return "COMMAND NOT FOUND\nList of commands:\nadd [description]\nupdate [id]\ndelete [id]\nmark-in-progress [id]\nmark-done [id]\nlist [done/todo/in-progress]";
 }

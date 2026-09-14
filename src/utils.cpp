@@ -34,7 +34,7 @@ void writeTasksToJson(vector<task> tasks){
         writeTaskToJson(task, "temp.json");
     }
     remove("tasks.json");
-    rename("temp.json", fileName);
+    rename("temp.json", "tasks.json");
 }
 
 //Parses a JSON file and returns a vector of Task objects.
