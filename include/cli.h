@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include "utils.h"
+#include "exception.h"
 using namespace std;
 
 struct task{
@@ -14,7 +15,7 @@ struct task{
     string updatedAt;
 };
 
-const string fileName = "tasks.json";
+const char* fileName = "tasks.json";
 
 class cli{
 private:
@@ -25,7 +26,7 @@ public:
     void deleteTask(int id);
     void markInProgess(int id);
     void markDone(int id);
-    void listTasks(int type); // 1 : all, 2 : done, 3 : todo, 4 : in-progress
+    void listTasks(string type); 
 };
 
 #endif
