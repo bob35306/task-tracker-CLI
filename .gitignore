@@ -1,0 +1,20 @@
+# C++ object files
+*.o
+
+# Compiled executable files
+*.exe
+*.out
+
+# Runtime data
+tasks.json
+
+# VS Code settings
+.vscode/
+
+# CMake/build folders
+build/
+cmake-build-*/
+
+# Temporary files
+*.tmp
+*.log
