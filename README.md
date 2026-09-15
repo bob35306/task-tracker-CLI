@@ -1,6 +1,29 @@
 # task-tracker-CLI
 Sample solution for Task Tracker from roadmap.sh
 
+## Requirements
+
+- C++ compiler with `g++`
+- C++17 or later
+- `make` is optional
+
+## Project Structure
+
+```text
+TASK-TRACKER-CLI/
+├── include/
+│   ├── cli.h
+│   ├── exception.h
+│   └── utils.h
+├── src/
+│   ├── cli.cpp
+│   ├── exception.cpp
+│   ├── main.cpp
+│   └── utils.cpp
+├── Makefile
+├── README.md
+└── tasks.json
+```
 ## How to run
 
 Clone the repository and run the following command:
@@ -11,9 +34,28 @@ cd task-tracker-cli
 ```
 
 Run the following command to build the project:
+### Method 1: Build using Makefile
+
+Check whether Make is available:
+
+```bash
+make --version
+```
+
+If the command displays the GNU Make version, build the project:
 
 ```bash
 make
+```
+
+### Method 2: Build directly using g++
+
+Use this method if `make` is not installed or cannot be used.
+
+
+```bash
+g++ -std=c++17 -Wall -Wextra -Iinclude src/main.cpp src/cli.cpp src/exception.cpp src/utils.cpp -o task-cli.exe
+```
 
 # To add a task
 task-cli add "Buy groceries"
