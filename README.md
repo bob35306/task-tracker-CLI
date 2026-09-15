@@ -56,7 +56,7 @@ Use this method if `make` is not installed or cannot be used.
 ```bash
 g++ -std=c++17 -Wall -Wextra -Iinclude src/main.cpp src/cli.cpp src/exception.cpp src/utils.cpp -o task-cli.exe
 ```
-
+```bash
 # To add a task
 task-cli add "Buy groceries"
 
