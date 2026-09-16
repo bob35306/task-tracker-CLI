@@ -22,7 +22,6 @@ TASK-TRACKER-CLI/
 │   └── utils.cpp
 ├── Makefile
 ├── README.md
-└── tasks.json
 ```
 ## How to run
 
